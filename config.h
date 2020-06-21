@@ -113,7 +113,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,     XK_t,           spawn,  SHCMD("appimage $HOME/.local/share/applications/tutanota-desktop.desktop") },
 	{ MODKEY|ShiftMask,     XK_k,           spawn,  SHCMD("appimage $HOME/.local/share/applications/keepassxc.desktop") },
 	{ MODKEY,               XK_m,           spawn,  SHCMD("mount-drive") },
-	{ 0,                    XK_Print,       spawn,  SHCMD("scrot --select /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
+	{ 0,                    XK_Print,       spawn,  SHCMD("sleep 0.2 && scrot --select /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
 	{ ShiftMask,            XK_Print,       spawn,  SHCMD("scrot /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
 	{ MODKEY|ShiftMask,     XK_Return,      spawn,  SHCMD("toggle-kbmap") },
 
