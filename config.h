@@ -106,7 +106,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_period,      focusmon,       {.i = +1 } }, /* next monitor */
 	{ MODKEY|ShiftMask,     XK_comma,       tagmon,         {.i = -1 } }, /* send window to previous monitor */
 	{ MODKEY|ShiftMask,     XK_period,      tagmon,         {.i = +1 } }, /* send window to next monitor */
-	{ MODKEY|ShiftMask,     XK_q,           spawn,          SHCMD("session-dmenu") },
+	{ MODKEY,               XK_o,           spawn,          SHCMD("session-dmenu") },
 	{ MODKEY|ControlMask,   XK_q,           quit,           {0} },
 
 	/* layouts */
