@@ -127,8 +127,8 @@ static Key keys[] = {
 	{ MODKEY,   XK_minus,                   spawn,  SHCMD("amixer -q -D pulse sset Master unmute && amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 dwmblocks") },
 	{ MODKEY,   XK_minus,                   spawn,  SHCMD("amixer -q -D pulse sset Master unmute && amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 dwmblocks") },
 	{ 0,        XF86XK_AudioMute,           spawn,  SHCMD("amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 dwmblocks") },
-	{ 0,        XF86XK_MonBrightnessUp,     spawn,  SHCMD("xbacklight -inc 10 && pkill -RTMIN+2 dwmblocks") },
-	{ 0,        XF86XK_MonBrightnessDown,   spawn,  SHCMD("xbacklight -dec 10 && pkill -RTMIN+2 dwmblocks") },
+	{ 0,        XF86XK_MonBrightnessUp,     spawn,  SHCMD("xbacklight -inc 5 && pkill -RTMIN+2 dwmblocks") },
+	{ 0,        XF86XK_MonBrightnessDown,   spawn,  SHCMD("xbacklight -dec 5 && pkill -RTMIN+2 dwmblocks") },
 
 	/* applications */
 	{ MODKEY,               XK_f,           spawn,  SHCMD("firefox") },
