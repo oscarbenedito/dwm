@@ -5,6 +5,7 @@ static unsigned int borderpx        = 2;        /* border pixel of windows */
 static unsigned int snap            = 32;       /* snap pixel */
 static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const char *fonts[]          = {
 	"FontAwesome:size=10",
 	"monospace:size=10"
@@ -30,8 +31,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     iscentered   isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
+	/* class     instance  title           tags mask  iscentered   isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",    NULL,     NULL,           0,         0,           1,          0,           0,        -1 },
+	{ "Alacritty",NULL,    NULL,           0,         0,           0,          1,           -1,       -1 },
+	{ NULL,      NULL,     "Event Tester", 0,         0,           1,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
