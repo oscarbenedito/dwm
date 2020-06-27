@@ -49,6 +49,7 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 	{ "TTT",      bstack },
 	{ "===",      bstackhoriz },
+	{ "[]D",      deck },
 };
 
 /* key definitions */
@@ -118,6 +119,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,   XK_m,           setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ControlMask,   XK_u,           setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ControlMask,   XK_o,           setlayout,      {.v = &layouts[4]} },
+	{ MODKEY|ControlMask,   XK_c,           setlayout,      {.v = &layouts[5]} },
 
 	/* media keys */
 	{ 0,        XF86XK_AudioRaiseVolume,    spawn,  SHCMD("amixer -q -D pulse sset Master unmute && amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 dwmblocks") },
