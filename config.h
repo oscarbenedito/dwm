@@ -93,16 +93,18 @@ ResourcePref resources[] = {
 #include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier             key        function        argument */
+	/* dwm */
 	{ MODKEY,               XK_p,           spawn,          {.v = dmenucmd } },
 	{ MODKEY,               XK_Return,      spawn,          {.v = termcmd } },
 	{ MODKEY,               XK_KP_Enter,    spawn,          {.v = termcmd } }, /* Numeric pad return */
 	{ MODKEY,               XK_b,           togglebar,      {0} },
 	{ MODKEY,               XK_j,           focusstack,     {.i = +1 } },
 	{ MODKEY,               XK_k,           focusstack,     {.i = -1 } },
-	{ MODKEY,               XK_i,           incnmaster,     {.i = +1 } },
-	{ MODKEY,               XK_d,           incnmaster,     {.i = -1 } },
 	{ MODKEY,               XK_h,           setmfact,       {.f = -0.05} },
 	{ MODKEY,               XK_l,           setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,     XK_plus,        incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,     XK_equal,       incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,     XK_minus,       incnmaster,     {.i = -1 } },
 	{ MODKEY,               XK_space,       zoom,           {0} },
 	{ MODKEY,               XK_Tab,         view,           {0} }, /* previous tag */
 	{ MODKEY,               XK_q,           killclient,     {0} },
@@ -117,35 +119,36 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,   XK_q,           quit,           {0} },
 
 	/* layouts */
-	{ MODKEY|ControlMask,   XK_t,           setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ControlMask,   XK_f,           setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ControlMask,   XK_m,           setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ControlMask,   XK_u,           setlayout,      {.v = &layouts[3]} },
-	{ MODKEY|ControlMask,   XK_o,           setlayout,      {.v = &layouts[4]} },
-	{ MODKEY|ControlMask,   XK_c,           setlayout,      {.v = &layouts[5]} },
-	{ MODKEY|ControlMask,   XK_r,           setlayout,      {.v = &layouts[6]} },
-	{ MODKEY|ShiftMask,     XK_r,           setlayout,      {.v = &layouts[7]} },
+	{ MODKEY,               XK_t,           setlayout,      {.v = &layouts[0]} }, /* tile */
+	{ MODKEY|ShiftMask,     XK_t,           setlayout,      {.v = &layouts[1]} }, /* floating */
+	{ MODKEY,               XK_i,           setlayout,      {.v = &layouts[2]} }, /* monocle */
+	{ MODKEY,               XK_y,           setlayout,      {.v = &layouts[3]} }, /* bottomstack */
+	{ MODKEY|ShiftMask,     XK_y,           setlayout,      {.v = &layouts[4]} }, /* bottomstack horizontal */
+	{ MODKEY,               XK_u,           setlayout,      {.v = &layouts[5]} }, /* deck */
+	{ MODKEY,               XK_r,           setlayout,      {.v = &layouts[6]} }, /* fibonacci */
+	{ MODKEY|ShiftMask,     XK_r,           setlayout,      {.v = &layouts[7]} }, /* fibonacci var */
 
-	/* media keys */
+	/* utilities */
 	{ 0,        XF86XK_AudioRaiseVolume,    spawn,  SHCMD("amixer -q -D pulse sset Master unmute && amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 dwmblocks") },
 	{ MODKEY,   XK_plus,                    spawn,  SHCMD("amixer -q -D pulse sset Master unmute && amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 dwmblocks") },
 	{ MODKEY,   XK_equal,                   spawn,  SHCMD("amixer -q -D pulse sset Master unmute && amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 dwmblocks") },
 	{ 0,        XF86XK_AudioLowerVolume,    spawn,  SHCMD("amixer -q -D pulse sset Master unmute && amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 dwmblocks") },
 	{ MODKEY,   XK_minus,                   spawn,  SHCMD("amixer -q -D pulse sset Master unmute && amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 dwmblocks") },
-	{ MODKEY,   XK_minus,                   spawn,  SHCMD("amixer -q -D pulse sset Master unmute && amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 dwmblocks") },
 	{ 0,        XF86XK_AudioMute,           spawn,  SHCMD("amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 dwmblocks") },
 	{ 0,        XF86XK_MonBrightnessUp,     spawn,  SHCMD("xbacklight -inc 5 && pkill -RTMIN+2 dwmblocks") },
 	{ 0,        XF86XK_MonBrightnessDown,   spawn,  SHCMD("xbacklight -dec 5 && pkill -RTMIN+2 dwmblocks") },
+	{ MODKEY,               XK_m,           spawn,  SHCMD("mount-drive") },
+	{ 0,                    XK_Print,       spawn,  SHCMD("sleep 0.2 && scrot --select /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
+	{ MODKEY,               XK_s,           spawn,  SHCMD("sleep 0.2 && scrot --select /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
+	{ ShiftMask,            XK_Print,       spawn,  SHCMD("scrot /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
+	{ MODKEY|ShiftMask,     XK_s,           spawn,  SHCMD("scrot /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
+	{ MODKEY|ShiftMask,     XK_Return,      spawn,  SHCMD("toggle-kbmap") },
 
 	/* applications */
 	{ MODKEY,               XK_f,           spawn,  SHCMD("firefox") },
-	{ MODKEY|ShiftMask,     XK_s,           spawn,  SHCMD("signal-desktop --no-sandbox") },
-	{ MODKEY|ShiftMask,     XK_t,           spawn,  SHCMD("appimage $HOME/.local/share/applications/tutanota-desktop.desktop") },
-	{ MODKEY|ShiftMask,     XK_k,           spawn,  SHCMD("appimage $HOME/.local/share/applications/keepassxc.desktop") },
-	{ MODKEY,               XK_m,           spawn,  SHCMD("mount-drive") },
-	{ 0,                    XK_Print,       spawn,  SHCMD("sleep 0.2 && scrot --select /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
-	{ ShiftMask,            XK_Print,       spawn,  SHCMD("scrot /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
-	{ MODKEY|ShiftMask,     XK_Return,      spawn,  SHCMD("toggle-kbmap") },
+	{ MODKEY,               XK_x,           spawn,  SHCMD("signal-desktop --no-sandbox") },
+	{ MODKEY,               XK_e,           spawn,  SHCMD("appimage $HOME/.local/share/applications/tutanota-desktop.desktop") },
+	{ MODKEY,               XK_c,           spawn,  SHCMD("appimage $HOME/.local/share/applications/keepassxc.desktop") },
 
 	/* tags */
 	TAGKEYS(                XK_1,           0)
