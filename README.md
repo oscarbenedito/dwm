@@ -90,16 +90,16 @@ Layouts:
 
 Utilities:
 
-| Key              | Description                           |
-| :--------------- | :------------------------------------ |
-| `p`              | Spawn dmenu to launch other programs. |
-| `o`              | Spawn logout menu.                    |
-| `m`              | Spawn mount/unmount drive menu.       |
-| `s`              | Screenshot (select area).             |
-| `Shift`+`s`      | Screenshot (whole screen).            |
-| `+` or `=`       | Increase volume.                      |
-| `-`              | Decrease volume.                      |
-| `Shift`+`Return` | Change keyboard layout.               |
+| Key              | Description                                        |
+| :--------------- | :------------------------------------------------- |
+| `p`              | Spawn dmenu to launch other programs.              |
+| `o`              | Spawn logout menu.                                 |
+| `m`              | Spawn mount/unmount drive menu.                    |
+| `s`              | Screenshot (select area).                          |
+| `Shift`+`s`      | Screenshot (whole screen).                         |
+| `+` or `=`       | Increase volume (+`Shift` for smaller increments). |
+| `-`              | Decrease volume (+`Shift` for smaller increments). |
+| `Shift`+`Return` | Change keyboard layout.                            |
 
 Applications:
 
@@ -124,8 +124,9 @@ Tags (`n` between 1..9):
 
 The keys `XF86XK_AudioRaiseVolume`, `XF86XK_AudioLowerVolume`,
 `XF86XK_AudioMute`, `XF86XK_MonBrightnessUp` and `XF86XK_MonBrightnessDown` work
-as expected. The key `XK_Print` will take a screenshot of the selected area and
-`Shift`+`XK_Print` will take a screenshot of the whole screen.
+as expected (and pressing `Shift` will give smaller increments). The key
+`XK_Print` will take a screenshot of the selected area and `Shift`+`XK_Print`
+will take a screenshot of the whole screen.
 
 A summary of the shortcuts that use letters. First row is `Mod`+`letter` and
 second row is `Mod`+`Shift`+`letter`.
