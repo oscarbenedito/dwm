@@ -107,7 +107,7 @@ Applications:
 | :------- | :---------------------------------- |
 | `Return` | Start terminal.                     |
 | `f`      | Start Firefox.                      |
-| `e`      | Start email client (Tutanota).      |
+| `e`      | Start email client (Thunderbird).   |
 | `c`      | Start password manager (KeePassXC). |
 | `x`      | Start Signal app.                   |
 

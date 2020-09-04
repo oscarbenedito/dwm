@@ -147,7 +147,7 @@ static Key keys[] = {
 	/* applications */
 	{ MODKEY,               XK_f,           spawn,  SHCMD("firefox") },
 	{ MODKEY,               XK_x,           spawn,  SHCMD("signal-desktop --no-sandbox") },
-	{ MODKEY,               XK_e,           spawn,  SHCMD("appimage $HOME/.local/share/applications/tutanota-desktop.desktop") },
+	{ MODKEY,               XK_e,           spawn,  SHCMD("thunderbird") },
 	{ MODKEY,               XK_c,           spawn,  SHCMD("appimage $HOME/.local/share/applications/keepassxc.desktop") },
 
 	/* tags */
