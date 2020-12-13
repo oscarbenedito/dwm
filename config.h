@@ -155,7 +155,8 @@ static Key keys[] = {
 	{ MODKEY,               XK_f,           spawn,  SHCMD("firefox") },
 	{ MODKEY,               XK_x,           spawn,  SHCMD("signal-desktop --no-sandbox") },
 	{ MODKEY,               XK_e,           spawn,  SHCMD("thunderbird") },
-	{ MODKEY,               XK_c,           spawn,  SHCMD("appimage $HOME/.local/share/applications/keepassxc.desktop") },
+	{ MODKEY,               XK_c,           spawn,  SHCMD("passmenu --type-all") },
+	{ MODKEY|ShiftMask,     XK_c,           spawn,  SHCMD("passmenu --type") },
 
 	/* tags */
 	TAGKEYS(                XK_1,           0)

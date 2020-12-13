@@ -97,6 +97,8 @@ Utilities:
 | `m`              | Spawn mount/unmount drive menu.                    |
 | `s`              | Screenshot (select area).                          |
 | `Shift`+`s`      | Screenshot (whole screen).                         |
+| `c`              | Input user and password from `pass`.               |
+| `Shift`+`c`      | Input password from `pass`.                        |
 | `+` or `=`       | Increase volume (+`Shift` for smaller increments). |
 | `-`              | Decrease volume (+`Shift` for smaller increments). |
 | `Shift`+`Return` | Change keyboard layout.                            |
@@ -108,7 +110,6 @@ Applications:
 | `Return` | Start terminal.                     |
 | `f`      | Start Firefox.                      |
 | `e`      | Start email client (Thunderbird).   |
-| `c`      | Start password manager (KeePassXC). |
 | `x`      | Start Signal app.                   |
 
 Tags (`n` between 1..9):
@@ -143,7 +144,7 @@ second row is `Mod`+`Shift`+`letter`.
   └─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┐
     │Z      │X      │C      │V      │B      │N      │M      │,      │.      │
     │       │Signal │Pass M │       │tgl bar│       │mount d│Prev sc│Next sc│
-    │       │       │       │       │       │       │       │Send PS│Send NS│
+    │       │       │Pass M │       │       │       │       │Send PS│Send NS│
     └───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
 ```
 
