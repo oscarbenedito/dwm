@@ -5,7 +5,9 @@ manager). dwm is an extremely fast, small, and dynamic window manager for X.
 
 ## Requirements
 
-In order to build dwm you need the Xlib header files.
+In order to build dwm you need the Xlib header files. This build uses Font
+Awesome icons for the status bar, make sure you have installed the correct
+files.
 
 ## Installation
 

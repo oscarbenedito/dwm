@@ -7,8 +7,9 @@ static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const char *fonts[]          = {
-	"FontAwesome:size=10",
-	"monospace:size=10"
+	"monospace:size=10",
+	"Font Awesome 5 Free Regular:size=10",
+	"Font Awesome 5 Free Solid:size=10"
 };
 static const char dmenufont[]       = "monospace:size=10";
 static char normbgcolor[]           = "#222222";
