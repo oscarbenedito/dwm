@@ -57,7 +57,8 @@ The configuration of dwm is done by editing the file `config.h` and
 ## Keyboard shortcuts
 
 You can check the man page for dwm to learn all about it, the only thing that is
-not up to date are my personal shortcuts. Here they are:
+not up to date are my personal shortcuts. Here they are (although some might not
+be up to date):
 
 DWM:
 
@@ -101,6 +102,8 @@ Utilities:
 | `Shift`+`s`      | Screenshot (whole screen).                         |
 | `c`              | Input user and password from `pass`.               |
 | `Shift`+`c`      | Input password from `pass`.                        |
+| `n`              | Create temp file and copy to primary clipboard.    |
+| `Shift`+`n`      | Create temp dir and copy to primary clipboard.     |
 | `+` or `=`       | Increase volume (+`Shift` for smaller increments). |
 | `-`              | Decrease volume (+`Shift` for smaller increments). |
 | `Shift`+`Return` | Change keyboard layout.                            |
@@ -145,8 +148,8 @@ second row is `Mod`+`Shift`+`letter`.
   │       │full sc│       │       │       │       │       │       │       │
   └─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┐
     │Z      │X      │C      │V      │B      │N      │M      │,      │.      │
-    │       │Signal │Pass M │       │tgl bar│       │mount d│Prev sc│Next sc│
-    │       │       │Pass M │       │       │       │       │Send PS│Send NS│
+    │       │Signal │Pass M │       │tgl bar│tmp fil│mount d│Prev sc│Next sc│
+    │       │       │Pass M │       │       │tmp dir│       │Send PS│Send NS│
     └───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
 ```
 

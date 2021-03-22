@@ -151,6 +151,8 @@ static Key keys[] = {
 	{ ShiftMask,            XK_Print,       spawn,  SHCMD("scrot /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
 	{ MODKEY|ShiftMask,     XK_s,           spawn,  SHCMD("scrot /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
 	{ MODKEY|ShiftMask,     XK_Return,      spawn,  SHCMD("toggle-kbmap") },
+	{ MODKEY,               XK_n,           spawn,  SHCMD("mktemp | tr -d \\\\n | xclip") },
+	{ MODKEY|ShiftMask,     XK_n,           spawn,  SHCMD("mktemp --directory | tr -d \\\\n | xclip") },
 
 	/* applications */
 	{ MODKEY,               XK_f,           spawn,  SHCMD("firefox") },
