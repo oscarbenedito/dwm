@@ -75,6 +75,9 @@ DWM:
 | `Space`     | Make current window the main window.            |
 | `Shift`+`+` or `Shift`+`=` | Increase number of main windows. |
 | `Shift`+`-` | Decrease number of main windows.                |
+| `g`         | Increase gaps.                                  |
+| `Shift`+`g` | Decrease gaps.                                  |
+| `Shift`+`b` | Toggle gaps.                                    |
 | `Ctrl`+`q`  | Quit dwm.                                       |
 | `Tab`       | Toggles to previously selected tags.            |
 
@@ -90,6 +93,8 @@ Layouts:
 | `u`         | Deck layout.                    |
 | `r`         | Fibonacci layout.               |
 | `Shift`+`r` | Fibonacci variant layout.       |
+| `w`         | Grid.                           |
+| `Shift`+`w` | Two row grid.                   |
 
 Utilities:
 
@@ -140,16 +145,16 @@ second row is `Mod`+`Shift`+`letter`.
 ```
 ┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
 │Q      │W      │E      │R      │T      │Y      │U      │I      │O      │P      │
-│close  │       │email  │L-fibo │L-tile │L-botto│L-deck │L-mono │session│dmenu  │
-│*quit  │       │       │L-fibo2│L-float│L-bott2│       │       │       │       │
+│close  │L-grid │email  │L-fibo │L-tile │L-botto│L-deck │L-mono │session│dmenu  │
+│*quit  │L-2rows│       │L-fibo2│L-float│L-bott2│       │       │       │       │
 └─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┘
   │A      │S      │D      │F      │G      │H      │J      │K      │L      │
-  │       │scrot  │       │Firefox│       │Big Mn │Next w.│Prev w.│Sml Mn │
-  │       │full sc│       │       │       │       │       │       │       │
+  │       │scrot  │       │Firefox│inc gap│Big Mn │Next w.│Prev w.│Sml Mn │
+  │       │full sc│       │       │dec gap│       │       │       │       │
   └─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┬─────┴─┐
     │Z      │X      │C      │V      │B      │N      │M      │,      │.      │
     │       │Signal │Pass M │       │tgl bar│tmp fil│mount d│Prev sc│Next sc│
-    │       │       │Pass M │       │       │tmp dir│       │Send PS│Send NS│
+    │       │       │Pass M │       │tgl gap│tmp dir│       │Send PS│Send NS│
     └───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
 ```
 
