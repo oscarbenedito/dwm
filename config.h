@@ -170,9 +170,10 @@ static Key keys[] = {
 	{ MODKEY,               XK_s,           spawn,  SHCMD("sleep 0.2 && scrot --select /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
 	{ ShiftMask,            XK_Print,       spawn,  SHCMD("scrot /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
 	{ MODKEY|ShiftMask,     XK_s,           spawn,  SHCMD("scrot /tmp/screenshot-$(date +%F_%T).png --exec 'xclip -selection c -target image/png < $f'; notify-send 'Screenshot copied to clipboard'") },
-	{ MODKEY|ShiftMask,     XK_Return,      spawn,  SHCMD("toggle-kbmap") },
 	{ MODKEY,               XK_n,           spawn,  SHCMD("mktemp | tr -d \\\\n | xclip") },
 	{ MODKEY|ShiftMask,     XK_n,           spawn,  SHCMD("mktemp --directory | tr -d \\\\n | xclip") },
+	{ ControlMask,          XK_Escape,      spawn,  SHCMD("dunstctl close") },
+	{ ControlMask,          XK_grave,       spawn,  SHCMD("dunstctl history-pop") },
 
 	/* applications */
 	{ MODKEY,               XK_f,           spawn,  SHCMD("firefox") },
