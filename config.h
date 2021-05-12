@@ -42,9 +42,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance  title    tags mask  iscentered  isfloating  isterminal  noswallow  monitor */
-	{ "Firefox", NULL,     NULL,      1 << 1,          0,          0,          0,         1,       -1 },
+	{ "firefox", NULL,     NULL,      1 << 1,          0,          0,          0,         1,       -1 },
 	{ "Signal",  NULL,     NULL,      1 << 8,          0,          0,          0,         1,       -1 },
-	{ "thunderbird",NULL,  NULL,      1 << 6,          0,          0,          0,         1,       -1 },
+	{ "Thunderbird",NULL,  NULL,      1 << 6,          0,          0,          0,         1,       -1 },
 	{ "Alacritty",NULL,    NULL,           0,          0,          0,          1,        -1,       -1 },
 	{ "Gcr-prompter",NULL, NULL,           0,          1,          1,          0,         1,       -1 }, /* GPG password prompt */
 	{ NULL,      NULL,     "Event Tester", 0,          0,          1,          0,         1,       -1 }, /* xev */
@@ -181,10 +181,10 @@ static Key keys[] = {
 
 	/* applications */
 	{ MODKEY,               XK_f,           spawn,  SHCMD("firefox") },
-	{ MODKEY,               XK_x,           spawn,  SHCMD("signal-desktop --no-sandbox") },
+	{ MODKEY,               XK_x,           spawn,  SHCMD("signal-desktop") },
 	{ MODKEY,               XK_e,           spawn,  SHCMD("thunderbird") },
-	{ MODKEY,               XK_c,           spawn,  SHCMD("passmenu --type-all") },
-	{ MODKEY|ShiftMask,     XK_c,           spawn,  SHCMD("passmenu --type") },
+	{ MODKEY,               XK_c,           spawn,  SHCMD("altpassmenu --type-all") },
+	{ MODKEY|ShiftMask,     XK_c,           spawn,  SHCMD("altpassmenu --type") },
 
 	/* tags */
 	TAGKEYS(                XK_1,           0)
