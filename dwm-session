@@ -1,0 +1,4 @@
+#!/bin/sh
+
+source $HOME/.zshenv
+source "${XINITRC:=$HOME/.xinitrc}"
